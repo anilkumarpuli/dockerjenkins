@@ -38,7 +38,7 @@ pipeline  {
                  sshagent(['nani-privatekey']) 
                    {
                     
-                  sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.240 ${dockerRun'}"
+                  sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.240 ${dockerRun}"
                  }
                    }
               }
