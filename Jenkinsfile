@@ -23,7 +23,7 @@ pipeline  {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-            stage('docker build')
+            stage('docker build and push to docker hub')
             {
                 steps{
                     sh'docker build -t anilkumblepuli/fisrtpipe:1.0.1 .'
