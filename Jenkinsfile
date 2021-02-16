@@ -39,8 +39,8 @@ pipeline  {
                    {
                     
                   sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.240 ${dockerRun}"
-                 }
-                   }
+                  }
+                }
               }
             post {
                 // If Maven was able to run the tests, even if some of the test
