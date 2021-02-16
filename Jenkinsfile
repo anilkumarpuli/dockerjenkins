@@ -31,6 +31,13 @@ pipeline  {
                     sh'docker push anilkumblepuli/fisrtpipe:1.0.1 '
                     }
                     }
+          stage('deploy to dev server')
+             { 
+              steps{
+                 sshagent(['nani-privatekey']) 
+                   {
+                    sh 'docker run --name myimage -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1
+                   
         }
 
             post {
