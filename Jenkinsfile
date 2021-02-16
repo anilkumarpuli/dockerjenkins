@@ -1,6 +1,6 @@
 
-pipeline  {
-     agent  {label'slave1'}
+pipeline {
+     agent {label'slave1'}
 
     tools {
         
@@ -36,12 +36,13 @@ pipeline  {
                   def dockerRun ="docker run --name mydockerimage1 -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1"
               steps{
                  sshagent(['nani-privatekey']) 
-                   {
-                    
-                  sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.240 ${dockerRun}"
+                  {
+            
+                 sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.240 ${dockerRun}"
                   }
                 }
               }
+    }
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
