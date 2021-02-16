@@ -14,6 +14,7 @@ pipeline  {
             steps {
                 // Get some code from a GitHub repository
                  sh 'git clone https://github.com/anilkumarpuli/dockerjenkins.git'
+                 sh'rm -rf dockerjenkins'
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
