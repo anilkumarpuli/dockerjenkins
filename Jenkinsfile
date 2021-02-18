@@ -31,17 +31,17 @@ pipeline {
                     sh'docker push anilkumblepuli/fisrtpipe:1.0.1 '
                     }
                     }
-          //stage('deploy to dev server')
-            // { 
-              //    def dockerRun = "docker run --name mydockerimage1 -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1"
-             // steps{
-               //  sshagent(['nani-privatekey']) 
-                 // {
+             stage('deploy to dev server')
+              { 
+                  def dockerRun = 'docker run --name mydockerimage1 -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1'
+             
+                   sshagent(['nani-privatekey']) 
+                   {
             
-          //       sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.219 ${dockerRun}"
-            //      }
-           //     }
-            //  }
+                   sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.219 ${dockerRun}"
+                     }
+                   }
+                }
     }
             post {
                 // If Maven was able to run the tests, even if some of the test
