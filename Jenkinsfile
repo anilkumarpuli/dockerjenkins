@@ -40,7 +40,7 @@ pipeline {
             
                    sh "ssh -o StrictHostKeyChecking=no nani@172.31.30.219 ${dockerRun}"
                      }
-                   }
+                   
                 }
     }
             post {
