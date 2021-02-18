@@ -33,7 +33,8 @@ pipeline {
                     }
              stage('deploy to dev server')
               { 
-                   steps{
+                   steps
+                   {
                   def dockerRun = 'docker run --name mydockerimage1 -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1'
              
                    sshagent(['nani-privatekey']) 
