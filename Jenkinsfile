@@ -36,7 +36,7 @@ pipeline {
                    steps
                    {
                    def dockerRun = 'docker run --name mydockerimage1 -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1'
-                        def dockerCMD= "{$dockerRun}"
+                        def dockerCMD= "${dockerRun}"
                    sshagent(['ssh-pem']) 
                     {
             
