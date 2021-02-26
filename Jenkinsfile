@@ -35,7 +35,7 @@ pipeline {
                  stage('deploy to dev server')
                   { 
                     {        
-                         sh "ssh -i myfirst.pem nani@172.31.30.219
+                         sh 'ssh -i myfirst.pem nani@172.31.30.219'
                          
                          sh 'docker run --name mydockerimage -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1'
                      }
