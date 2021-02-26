@@ -38,7 +38,7 @@ pipeline {
                        {
                     sh 'ssh -i myfirst.pem jenkins2@172.31.25.98'
                          
-                    sh 'docker run --name mydockerimage98 -p 8080:8080 anilkumblepuli/firstpipe:1.0.1'
+                    sh 'docker run --name mydockerimage8 -p 8081:8080 anilkumblepuli/firstpipe:1.0.1'
                   }
                   }
     }
