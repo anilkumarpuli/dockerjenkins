@@ -36,7 +36,7 @@ pipeline {
                   {   
                        steps
                        {
-                    sh 'ssh -i /home/nani/myfirst.pem jenkins2@172.31.25.98 /bin/bash'
+                    sh 'ssh -i /home/nani/myfirst.pem -l jenkins2@172.31.25.98 /bin/bash'
                          
                     sh 'docker run --name mydockerimage -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1'
                   }
