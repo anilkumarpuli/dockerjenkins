@@ -26,7 +26,7 @@ pipeline {
             stage('docker build and push to docker hub')
             {
                 steps{
-                    sh'docker build -t anilkumblepuli/fisrtpipe:1.0.1 .'
+                    sh'docker build -t anilkumblepuli/firstpipe:1.0.1 .'
                     sh'docker login -u anilkumblepuli -p Anilkumar@123'
                     sh'docker push anilkumblepuli/fisrtpipe:1.0.1 '
                     }
@@ -38,7 +38,7 @@ pipeline {
                        {
                     sh 'ssh -i myfirst.pem jenkins2@172.31.25.98'
                          
-                    sh 'docker run --name mydockerimage12 -p 8080:8080 anilkumblepuli/fisrtpipe:1.0.1'
+                    sh 'docker run --name mydockerimage987 -p 8080:8080 anilkumblepuli/firstpipe:1.0.1'
                   }
                   }
     }
