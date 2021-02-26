@@ -38,7 +38,7 @@ pipeline {
                        {
                     sh 'sudo ssh -o StrictHostKeyChecking=no -i myfirst.pem jenkins2@172.31.25.98'
                          
-                    sh 'docker run --name mydockerimage101 -p 8083:8080 anilkumblepuli/firstpipe:1.0.1'
+                    sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:1.0.1'
                   }
                   }
     }
