@@ -30,7 +30,7 @@ pipeline {
                     sh'docker login -u anilkumblepuli -p Anilkumar@123'
                     sh'docker push anilkumblepuli/fisrtpipe:1.0.1 '
                     }
-                    steps
+                 
                     }
                  stage('deploy to dev server')
                   {   
