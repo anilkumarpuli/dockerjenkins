@@ -36,6 +36,7 @@ pipeline {
                   {   
                        steps
                        {
+                    sh 'sshpass -p 'jenkins2' ssh jenkins2@172.31.25.98'
                     sh 'sudo ssh -o StrictHostKeyChecking=no -t -t jenkins2@172.31.25.98 /bin/bash'
                          
                     sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:1.0.1'
