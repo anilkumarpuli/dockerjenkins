@@ -23,19 +23,27 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-            stage('docker build and push to docker hub')
+            stage('docker build')
             {
                 steps
                   {
                     sh'docker build -t anilkumblepuli/firstpipe:$BUILD_NUMBER .'
+                  }
+            }
+         stage('docker push to hub')
+         {
+              steps
+              {
                     withCredentials([string(credentialsId: 'docker--hub', variable: 'docker--pwd')])
-                     {
+                       {
                           sh "docker login -u anilkumblepuli -p ${docker--pwd}"
                           sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
-                    }
-                  }
+                        }
+                      }
                  
                     }
+               }
+         
                  stage('deploy to dev server')
                   {   
                        steps
