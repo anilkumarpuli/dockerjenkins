@@ -33,10 +33,10 @@ pipeline {
          stage('docker push to hub')
          {
               steps
-              {
-                 withCredentials([string(credentialsId: 'dockerhub_pwd', variable: 'docker_pwd')]) 
+                   {
+                     withCredentials([string(credentialsId: 'dockerhub_pwd', variable: 'docker_pwd')]) 
                        {
-                          sh  "docker login -u anilkumblepuli -p ${docker_pwd}"
+                          sh  'docker login -u anilkumblepuli -p ${docker_pwd}'
                           sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
                         }
                       }
