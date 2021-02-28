@@ -29,7 +29,7 @@ environment {
             {
                 steps
                   {
-                    sh'docker build -t anilkumblepuli/firstpipe:$BUILD_NUMBER .'
+                       sh"docker build -t anilkumblepuli/firstpipe:${DOCKER_TAG} . "
                   }
             }
          stage('docker push to hub')
@@ -38,8 +38,8 @@ environment {
                    {
                     withCredentials([string(credentialsId: 'dockerhub_pwd', variable: 'docker_pwd')]) 
                        {
-                          sh  "docker login -u anilkumblepuli -p ${docker_pwd}"
-                          sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
+                            sh  "docker login -u anilkumblepuli -p ${docker_pwd}"
+                            sh "docker push anilkumblepuli/fisrtpipe:${DOCKER_TAG}"
                         }
                       }
                  
