@@ -37,7 +37,7 @@ pipeline {
                        steps
                        {
                     
-                    sh 'sudo ssh -i  nani@172.31.25.98 /bin/bash'                         
+                    sh 'sudo ssh 172.31.25.98 /bin/bash'                         
                     sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:1.0.1'
                   }
                   }
