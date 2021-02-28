@@ -36,12 +36,13 @@ pipeline {
                   {   
                        steps
                        {
-                    
-                    sh 'ssh 172.31.25.98 '                         
-                    sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:1.0.1'
+                        sshagent(['nexus-cred12']) {
+                        sh 'ssh 172.31.25.98 '                         
+                        sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:1.0.1'
                   }
                   }
-    }
+     }
+      }
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
