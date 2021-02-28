@@ -29,7 +29,7 @@ environment {
             {
                 steps
                   {
-                       sh "docker build -t anilkumblepuli/firstpipe:${DOCKER_TAG} /home/nani "
+                       sh "docker build -t /home/nani  anilkumblepuli/firstpipe:${DOCKER_TAG} "
                   }
             }
          stage('docker push to hub')
