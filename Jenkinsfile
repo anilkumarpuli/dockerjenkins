@@ -36,7 +36,7 @@ pipeline {
               {
                        withCredentials([string(credentialsId: 'docker-hub123', variable: 'docker-id')]) 
                        {
-                        sh  'docker login -u anilkumblepuli -p ${docker-id}'
+                          sh  "docker login -u anilkumblepuli -p ${docker-id}"
                           sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
                         }
                       }
