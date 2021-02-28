@@ -25,7 +25,8 @@ pipeline {
         }
             stage('docker build and push to docker hub')
             {
-                steps{
+                steps
+                  {
                     sh'docker build -t anilkumblepuli/firstpipe:$BUILD_NUMBER .'
                     withCredentials([string(credentialsId: 'docker--hub', variable: 'docker--pwd')])
                      {
