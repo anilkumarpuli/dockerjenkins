@@ -34,14 +34,14 @@ pipeline {
          {
               steps
               {
-                    withCredentials([string(credentialsId: 'docker--hub', variable: 'docker--pwd')])
+                      withCredentials([string(credentialsId: 'docker-hub123', variable: 'docker-pw')]) 
                        {
-                        sh  'docker login -u anilkumblepuli -p ${docker--pwd}'
+                        sh  'docker login -u anilkumblepuli -p ${docker-pw}'
                           sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
                         }
                       }
                  
-         }        
+            }        
          
                  stage('deploy to dev server')
                   {   
