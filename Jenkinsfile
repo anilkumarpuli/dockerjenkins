@@ -37,7 +37,7 @@ pipeline {
                        steps
                        {
                         sshagent(['nexus-cred12']) {
-                        sh 'ssh 172.31.25.98 '                         
+                        sh 'ssh nani@172.31.25.98'                         
                         sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:$BUILD_NUMBER'
                   }
                   }
