@@ -36,13 +36,12 @@ pipeline {
               {
                     withCredentials([string(credentialsId: 'docker--hub', variable: 'docker--pwd')])
                        {
-                          sh "docker login -u anilkumblepuli -p ${docker--pwd}"
+                        sh "docker login -u anilkumblepuli -p ${docker--pwd}"
                           sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
                         }
                       }
                  
-                    }
-               }
+         }        
          
                  stage('deploy to dev server')
                   {   
@@ -52,9 +51,9 @@ pipeline {
                        {
                         sh 'ssh nani@172.31.25.98'                         
                         sh 'docker run --name mydockerimage103 -p 8084:8080 anilkumblepuli/firstpipe:$BUILD_NUMBER'
-                    }
+                     }
                  }
-         }
+             }
            }
              post {
                 // If Maven was able to run the tests, even if some of the test
