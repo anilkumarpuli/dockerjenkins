@@ -6,8 +6,10 @@ pipeline {
         
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven"
+        }    
+environment {
+      DOCKER_TAG = getVersion()
     }
-
     stages {
         
         stage('Build') {
@@ -63,8 +65,11 @@ pipeline {
                     archiveArtifacts 'target/*.war'
                 }
             }
-        }
-    
+        }    
+def getVersion(){
+    def commitHash = sh label: '', returnStdout: true, script: 'git rev-parse --short HEAD'
+    return commitHash
+}
 
 
 
