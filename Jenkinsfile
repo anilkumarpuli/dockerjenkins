@@ -33,6 +33,7 @@ pipeline {
                           sh "docker login -u anilkumblepuli -p ${docker--pwd}"
                           sh'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER '
                     }
+                  }
                  
                     }
                  stage('deploy to dev server')
