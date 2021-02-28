@@ -29,9 +29,8 @@ pipeline {
                     sh'docker build -t anilkumblepuli/firstpipe:$BUILD_NUMBER .'
                     withCredentials([string(credentialsId: 'docker--hub', variable: 'docker--pwd')])
                      {
-                     
                           sh "docker login -u anilkumblepuli -p ${docker--pwd}"
-                          sh'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER '
+                          sh 'docker push anilkumblepuli/fisrtpipe:$BUILD_NUMBER'
                     }
                   }
                  
